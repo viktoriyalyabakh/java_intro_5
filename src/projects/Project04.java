@@ -3,12 +3,16 @@ package projects;
 import utilities.RandomNumberGenerator;
 import utilities.ScannerHelper;
 
+import java.nio.charset.CodingErrorAction;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Project04 {
     public static void main(String[] args) {
 
-    Scanner scan = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
     /*
     TASK-1
     Write a program that asks user to enter a String, and swaps first and last 4
@@ -24,9 +28,9 @@ public class Project04 {
      */
         String str = ScannerHelper.getAString();
 
-       if(str.length() >= 8)
-           System.out.println(str.substring(str.length()-4) + str.substring(4,str.length()-4) +
-                   str.substring(0, 4));
+        if (str.length() >= 8)
+            System.out.println(str.substring(str.length() - 4) + str.substring(4, str.length() - 4) +
+                    str.substring(0, 4));
         else System.out.println("This String does not have 8 characters");
 
 
@@ -46,13 +50,12 @@ public class Project04 {
         System.out.println("Please enter the sentence");
         String s = scan.nextLine();
 
-       if (s.contains(" "))
-                System.out.println(s.substring(s.lastIndexOf(' ') + 1) +
-                        s.substring(s.indexOf(' '), s.lastIndexOf(' ') + 1) +
-                        s.substring(0, s.indexOf(' ')));
+        if (s.contains(" "))
+            System.out.println(s.substring(s.lastIndexOf(' ') + 1) +
+                    s.substring(s.indexOf(' '), s.lastIndexOf(' ') + 1) +
+                    s.substring(0, s.indexOf(' ')));
 
-       else System.out.println("This sentence does not have 2 or more words to swap");
-
+        else System.out.println("This sentence does not have 2 or more words to swap");
 
 
         System.out.println("\n----------Task-3----------\n");
@@ -102,11 +105,11 @@ public class Project04 {
 
         String name = ScannerHelper.getAName();
 
-        if(name.length() > 2){
-            if(name.length() % 2 == 0) System.out.println(name.substring(name.length()/2-1, name.length()/2+1));
-            else System.out.println(name.charAt(name.length()/2));
-        }
-        else System.out.println("Invalid input!!!");
+        if (name.length() > 2) {
+            if (name.length() % 2 == 0)
+                System.out.println(name.substring(name.length() / 2 - 1, name.length() / 2 + 1));
+            else System.out.println(name.charAt(name.length() / 2));
+        } else System.out.println("Invalid input!!!");
 
 
         System.out.println("\n----------Task-5----------\n");
@@ -130,7 +133,7 @@ public class Project04 {
         System.out.println("Please enter a country");
         String country = scan.nextLine();
 
-        if(country.length() < 5) System.out.println("Invalid input!!!");
+        if (country.length() < 5) System.out.println("Invalid input!!!");
         else System.out.println(country.substring(2, country.length() - 2));
 
 
@@ -160,7 +163,6 @@ public class Project04 {
         System.out.println(address);
 
 
-
         System.out.println("\n----------Task-7----------\n");
         /*
         Write a program that generates 2 random numbers between 0 and 25 (0 and
@@ -181,8 +183,8 @@ public class Project04 {
 
         String box = "";
 
-        for (int i = Math.min(random1, random2); i <= Math.max(random1, random2) ; i++) {
-            if(i % 5 != 0) box += i + " - ";
+        for (int i = Math.min(random1, random2); i <= Math.max(random1, random2); i++) {
+            if (i % 5 != 0) box += i + " - ";
         }
         System.out.println(box.substring(0, box.length() - 3));
 
@@ -213,12 +215,11 @@ public class Project04 {
 
         int counter = 1;
 
-        if(!sentence.contains(" ")){
+        if (!sentence.contains(" ")) {
             System.out.println("This sentence does not have multiple words.");
-        }
-        else{
-            for (int i = 0; i < sentence.length() ; i++) {
-                if(sentence.charAt(i) == ' ') counter++;
+        } else {
+            for (int i = 0; i < sentence.length(); i++) {
+                if (sentence.charAt(i) == ' ') counter++;
 
             }
             System.out.println("This sentence has " + counter + " words");
@@ -244,10 +245,10 @@ public class Project04 {
 
         int num = ScannerHelper.getANumber();
 
-        for(int i = 1; i <= num; i++){
-            if(i % 2 == 0 && i % 3 == 0) System.out.println("FooBar");
-            else if(i % 2 == 0) System.out.println("Foo");
-            else if(i % 3 == 0) System.out.println("Bar");
+        for (int i = 1; i <= num; i++) {
+            if (i % 2 == 0 && i % 3 == 0) System.out.println("FooBar");
+            else if (i % 2 == 0) System.out.println("Foo");
+            else if (i % 3 == 0) System.out.println("Bar");
             else System.out.println(i);
         }
 
@@ -287,14 +288,13 @@ public class Project04 {
         String word = scan.next();
 
         String reversedWord = "";
-        if(word.length() >= 1){
+        if (word.length() >= 1) {
             for (int i = word.length() - 1; i >= 0; i--) {
                 reversedWord += word.charAt(i);
             }
             System.out.println(reversedWord.equals(word) ?
                     "This word is palindrome" : "This word is not palindrome");
-        }
-        else System.out.println("This word does not have 1 or more characters");
+        } else System.out.println("This word does not have 1 or more characters");
 
 
         System.out.println("\n----------Task-11----------\n");
@@ -321,7 +321,7 @@ public class Project04 {
         String sentence1 = ScannerHelper.getAString();
 
         int counter1 = 0;
-        if(sentence1.length() < 1) System.out.println("This sentence does not have any characters.");
+        if (sentence1.length() < 1) System.out.println("This sentence does not have any characters.");
         else {
             for (int i = 0; i < sentence1.length(); i++) {
                 if (sentence1.toLowerCase().charAt(i) == 'a') counter1++;
@@ -329,6 +329,20 @@ public class Project04 {
             System.out.println("This sentence has " + counter1 + " a or A letters");
         }
 
-}
+        List<Integer> numbers = new ArrayList<>(Arrays.asList(4, 6, 7, 1, 3));
+
+        numbers.removeIf(x -> x % 2 == 0);
+        System.out.println(numbers);
+
+        Integer n = 10;
+        for (int i = 1; i <= 3; i++) {
+            numbers.add(n);
+        }
+        System.out.println(numbers);
     }
+
+}
+
+
+
 
