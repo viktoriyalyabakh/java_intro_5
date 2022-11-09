@@ -213,17 +213,18 @@ public class Project04 {
 
         String sentence = ScannerHelper.getAString().trim();
 
-        int counter = 1;
-
-        if (!sentence.contains(" ")) {
-            System.out.println("This sentence does not have multiple words.");
-        } else {
-            for (int i = 0; i < sentence.length(); i++) {
-                if (sentence.charAt(i) == ' ') counter++;
-
-            }
-            System.out.println("This sentence has " + counter + " words");
-        }
+//        int counter = 1;
+//
+//        if (!sentence.contains(" ")) {
+//            System.out.println("This sentence does not have multiple words.");
+//        } else {
+//            for (int i = 0; i < sentence.length(); i++) {
+//                if (sentence.charAt(i) == ' ') counter++;
+//
+//            }
+//            System.out.println("This sentence has " + counter + " words");
+//        }
+        System.out.println(sentence.split(" ").length);
 
         System.out.println("\n----------Task-9----------\n");
 

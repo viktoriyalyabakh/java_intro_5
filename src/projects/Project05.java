@@ -193,9 +193,6 @@ public class Project05 {
             count = 0;
         }
         System.out.println(mostCountWords);
-        System.out.println(mostCount);
-
-
 
     }
 

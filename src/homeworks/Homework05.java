@@ -199,33 +199,33 @@ public class Homework05 {
          */
 
 
-        System.out.println("\n-----while_loop-----\n");
-        int number1 = ScannerHelper.getANumber();
-        int sumOfNumbers = number1;
-        if (number1 > 100) System.out.println("This number is already more than 100");
-
-        while (sumOfNumbers <= 100) {
-            int number2 = ScannerHelper.getANumber();
-            sumOfNumbers += number2;
-            if (sumOfNumbers > 100) System.out.println("Sum of the entered numbers is at list 100");
-        }
-
-
-        System.out.println("\n-----do_while_loop-----\n");
-
-
-        int num1 = ScannerHelper.getANumber();
-        if(num1 > 100) System.out.println("This number is already more than 100");
-        else {
-            int sumOfNumber = num1;
-            do {
-                int num2 = ScannerHelper.getANumber();
-                sumOfNumber += num2;
-            }
-            while (sumOfNumber < 100);
-            System.out.println("Sum of the entered numbers is at list 100");
-        }
-
+//        System.out.println("\n-----while_loop-----\n");
+//        int number1 = ScannerHelper.getANumber();
+//        int sumOfNumbers = number1;
+//        if (number1 > 100) System.out.println("This number is already more than 100");
+//
+//        while (sumOfNumbers <= 100) {
+//            int number2 = ScannerHelper.getANumber();
+//            sumOfNumbers += number2;
+//            if (sumOfNumbers > 100) System.out.println("Sum of the entered numbers is at list 100");
+//        }
+//
+//
+//        System.out.println("\n-----do_while_loop-----\n");
+//
+//
+//        int num1 = ScannerHelper.getANumber();
+//        if(num1 > 100) System.out.println("This number is already more than 100");
+//        else {
+//            int sumOfNumber = num1;
+//            do {
+//                int num2 = ScannerHelper.getANumber();
+//                sumOfNumber += num2;
+//            }
+//            while (sumOfNumber < 100);
+//            System.out.println("Sum of the entered numbers is at list 100");
+//        }
+//
 
             System.out.println("\n----------Task-9---------\n");
 
@@ -251,7 +251,7 @@ public class Homework05 {
         0 – 1 – 1 – 2 – 3 – 5 - 8
          */
 
-        int fibonacciNumber = 9;
+        int fibonacciNumber = 3;
 
         int n1 = 0;
         int n2 = 1;

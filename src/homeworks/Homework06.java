@@ -81,7 +81,7 @@ public class Homework06 {
         THEN:
         -Print the entire array
         -Print the entire array sorted in ascending order
-        Expected Result:
+        Expected Result:]
         [23, -34, -56, 0, 89, 100]
         [-56, -34, 0, 23, 89, 100
          */
