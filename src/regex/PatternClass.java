@@ -19,7 +19,7 @@ public class PatternClass {
         String name = ScannerHelper.getAName();
 
         pattern = Pattern.compile("[a-zA-Z0-9]{5,10}");
-        //if(name.matches("[a-zA-Z0-9]{5,10}")
+        //if(name.matches("[a-zA-Z0-9]{5,10}"rtyg)
         if(Pattern.matches(pattern.pattern(), name)) System.out.println("Valid Username");
         else System.out.println("Error! Username must be 5 to 10 characterrs long and can contain letters and numbers");
 
