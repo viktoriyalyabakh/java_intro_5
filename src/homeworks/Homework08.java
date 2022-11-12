@@ -9,8 +9,8 @@ public class Homework08 {
 
         System.out.println(countConsonants("JAVA"));
     }
-    // TASK 1
     /*
+    TASK 1
     Write a method named countConsonants() that takes a String as an argument a returns how many consonants
     are in the String.
     NOTE: You must use regex
@@ -37,6 +37,23 @@ public class Homework08 {
         }
         return countConsonants;
         }
+
+        /*
+        TASK 2
+        Write a method named wordArray() that takes a String
+        as an argument a returns a String array with all the
+        words in the String
+        NOTE: Make as dynamic as possible.
+        Example program1:
+        String str = “hello”;
+        Program: [hello]
+        Example program2:
+        String str = “java  is    fun”;
+        Program: [java, is, fun]
+        Example program2:
+        String str = “Hello, nice to meet you!!”;
+        Program: [Hello, nice, to, meet, you]
+         */
 
     }
 
