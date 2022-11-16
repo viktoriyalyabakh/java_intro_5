@@ -54,9 +54,9 @@ public class Project06 {
         [2, 6, 7, 0, 15]
          */
 
-    public static ArrayList removeNegative(ArrayList<Integer> numbers) {
-     numbers.removeIf(x -> x < 0);
-     return numbers;
+    public static ArrayList removeNegative(ArrayList<Integer> list) {
+     list.removeIf(x -> x < 0);
+     return list;
     }
 
     /*

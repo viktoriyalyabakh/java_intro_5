@@ -1,6 +1,10 @@
 package homeworks;
 
+import utilities.ScannerHelper;
+
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -9,8 +13,11 @@ public class Homework08 {
 
 
         System.out.println(countConsonants("JAVA"));
-        System.out.println(wordArray("Hello, nice to meet you!!"));
+        System.out.println(wordArray("Hello, nice  to  &%$  meet_ you!!"));
         System.out.println(removeExtraSpaces("Hello,    nice to   meet     you!!"));
+        System.out.println(count3OrLess());
+        System.out.println(isDateFormatValid("1/20/1991"));
+        System.out.println(isEmailFormatValid("ajjjj@student.com"));
     }
     /*
     TASK 1
@@ -28,7 +35,7 @@ public class Homework08 {
     Program: 0
      */
 
-    public static int countConsonants(String str){
+    public static int countConsonants(String str) {
 
         Pattern pattern = Pattern.compile("[^aoiueAOUIE]");
         Matcher matcher = pattern.matcher(str);
@@ -39,7 +46,7 @@ public class Homework08 {
             countConsonants++;
         }
         return countConsonants;
-        }
+    }
 
         /*
         TASK 2
@@ -58,10 +65,12 @@ public class Homework08 {
         Program: [Hello, nice, to, meet, you]
          */
 
-        public static String wordArray(String str) {
-             str.replaceAll("[ ,^a-zA-Z]+", " ");
-            return str;
-        }
+    public static String wordArray(String str) {
+
+        String[] s = str.split("[ ,\\W_]+");
+        return Arrays.toString(s);
+
+    }
 
         /*
         TASK 3
@@ -80,9 +89,11 @@ public class Homework08 {
         Program: Hello, nice to meet you!!
          */
 
-    public static String removeExtraSpaces(String str){
+    public static String removeExtraSpaces(String str) {
 
-       return str.replaceAll("[ ]+", " ");
+        return str.replaceAll("[ ]+", " ");
+
+    }
 
        /*
        TASK 4
@@ -101,11 +112,81 @@ public class Homework08 {
         Program: 0
         */
 
+    public static int count3OrLess() {
 
 
+        String[] strArray = ScannerHelper.getAString().split(" ");
+
+        int counter = 0;
+
+        for (String s : strArray) {
+            if (s.matches("[a-zA-Z]{0,3}")) counter++;
+        }
+        return counter;
+    }
+        /*
+        TASK 5
+        Write a method named isDateFormatValid() that takes a
+        String dateOfBirth as an argument and checks if the given
+        date matches the given DOB requirements.
+        This method would return a true or false boolean
+        Format: nn/nn/nnnn
+        Example program1:
+        String dateOfBirth = “01/21/1999”;
+        Program: true
+        Example program2:
+        String dateOfBirth = “1/20/1991”;
+        Program: false
+        Example program3:
+        String dateOfBirth = “10/2/1991”;
+        Program: false
+        Example program4:
+        String dateOfBirth = “12-20 2000”;
+        Program: false
+        Example program5:
+        String dateOfBirth = “12/16/19500”;
+        Program: false
+         */
+
+        public static boolean isDateFormatValid(String str){
+            return Pattern.matches("[\\d]{2}/[\\d]{2}/[\\d]{4}", str);
         }
 
+        /*
+        TASK 6
+        Write a method named isEmailFormatValid() that takes a String
+        email as an argument and checks if the given email matches
+        the given email requirements.
+        This method would return a true or false boolean.
+        Format: <2+chars>@<2+chars>.<2+chars>
+        NOTE: Do not use any type of loop. Use Regex
+        Example program1:
+        String email = “abc@gmail.com”;
+        Program: true
+        Example program2:
+        String email = “abc@student.techglobal.com”;
+        Program: true
+        Example program3:
+        String email = “a@gmail.com”;
+        Program: false
+        Example program4:
+        String email = “abcd@@gmail.com”;
+        Program: false
+        Example program5:
+        String email = “abc@gmail”;
+        Program:false
+         */
+
+    public static boolean isEmailFormatValid(String email){
+        return Pattern.matches("^(.{2,})@(.{2,}).(\\.[com]{2,})$", email);
     }
+    }
+
+
+
+
+
+
 
 
 
