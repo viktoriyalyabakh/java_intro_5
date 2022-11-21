@@ -25,19 +25,19 @@ public class Homework09 {
     Expected output 2:
     There is no duplicates
     Test data 3:
-    int[] numbers = {3, 4, 3, 3, 5, 5, 6, 6, 7};
+    int[] numbers = {3, 4, 4, 3, 5, 5, 6, 6, 7};
 
     Expected output 2:
     3
      */
-        int[] numbers = {-4, 0, -7, 5, 10, 45};
+        int[] numbers = {3, 4, 4, 3, 5, 5, 6, 6, 7};
 
             boolean isDublicate = false;
             for (int i = 0; i < numbers.length; i++) {
                 for (int j = i+1; j < numbers.length; j++) {
                     if(numbers[i] == numbers[j]) {
-                        System.out.println(numbers[i]);
                         isDublicate = true;
+                        System.out.println(numbers[i]);
                         break;
                     }
                 }
@@ -219,7 +219,7 @@ public class Homework09 {
         for (String element : strArray) {
             reverseStr.append(new StringBuilder(element).reverse().append(" "));
         }
-        System.out.println(reverseStr);;
+        System.out.println(reverseStr.toString().trim());;
         }
     }
 
