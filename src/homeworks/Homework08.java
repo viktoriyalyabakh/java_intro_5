@@ -17,7 +17,7 @@ public class Homework08 {
         System.out.println(removeExtraSpaces("Hello,    nice to   meet     you!!"));
         System.out.println(count3OrLess());
         System.out.println(isDateFormatValid("1/20/1991"));
-        System.out.println(isEmailFormatValid("ajjjj@student.com"));
+        System.out.println(isEmailFormatValid("ahhhh@student.ooo.com"));
     }
     /*
     TASK 1
@@ -178,7 +178,7 @@ public class Homework08 {
          */
 
     public static boolean isEmailFormatValid(String email){
-        return Pattern.matches("^(.{2,})@(.{2,}).(\\.[com]{2,})$", email);
+        return Pattern.matches("^([a-zA-Z0-9+_.-]{2,})@(.{2,}).(\\.[com]{2,})$", email);
     }
     }
 
