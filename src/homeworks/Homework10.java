@@ -2,24 +2,11 @@ package homeworks;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class Homework10 {
 
-    public static void main(String[] args) {
-        String str = "   I   am      learning     Java      ";
-        ArrayList<Integer> arr = new ArrayList<>(Arrays.asList(-45, 0, 0, 34, 5, 67));
-        ArrayList<Integer> arr1 = new ArrayList<>(Arrays.asList(10, 20, 35, 60, 60, 60, 70));
-        ArrayList<String> arr2 = new ArrayList<>(Arrays.asList("java", "C#", "ruby", "JAVA", "ruby", "C#", "C++"));
-        int[] arr4 =  {10, 3, 6, 3, 2};
-        int[] arr5 = {6, 8, 3, 0, 0, 7, 5, 10, 34};
-        System.out.println(countWords(str));
-        System.out.println(countA(str));
-        System.out.println(countPos(arr));
-        removeDuplicateNumbers(arr1);
-        removeDuplicateElements(arr2);
-        System.out.println(removeExtraSpaces(str));
-        System.out.println(Arrays.toString(add(arr4, arr5)));
-    }
     /*
     Write a method countWords() that takes a String as an
     argument, and returns how many words there are in the
@@ -60,6 +47,7 @@ public class Homework10 {
          */
 
     public static int countA(String str) {
+
         return str.replaceAll("[^aA]", "").length();
     }
 
@@ -80,6 +68,7 @@ public class Homework10 {
          */
 
     public static int countPos(ArrayList<Integer> arr) {
+
         return (int) arr.stream().filter(x -> x > 0).count();
     }
 
@@ -104,7 +93,7 @@ public class Homework10 {
         ArrayList<Integer> newArr = new ArrayList<>();
 
         for (Integer element : arr) {
-            if(!newArr.contains(element)) newArr.add(element);
+            if (!newArr.contains(element)) newArr.add(element);
         }
         System.out.println(newArr);
     }
@@ -131,7 +120,7 @@ public class Homework10 {
 
         ArrayList<String> newArr = new ArrayList<>();
         for (String s : strList) {
-            if(!newArr.contains(s)) newArr.add(s);
+            if (!newArr.contains(s)) newArr.add(s);
         }
         System.out.println(newArr);
     }
@@ -153,7 +142,7 @@ public class Homework10 {
     NOTE: Be careful about before and after white space
      */
 
-    public static String removeExtraSpaces(String str){
+    public static String removeExtraSpaces(String str) {
         return str.replaceAll("[ ]+", " ").trim();
     }
 
@@ -176,15 +165,15 @@ public class Homework10 {
     an easy task, but they can be different as given in the example above.
      */
 
-    public static int[] add(int[] arr1, int[] arr2){
+    public static int[] add(int[] arr1, int[] arr2) {
 
-        int[] sum = new int[Math.max(arr1.length,arr2.length)];
+        int[] sum = new int[Math.max(arr1.length, arr2.length)];
 
-        for (int i = 0; i < Math.min(arr1.length,arr2.length); i++) {
+        for (int i = 0; i < Math.min(arr1.length, arr2.length); i++) {
             sum[i] = arr1[i] + arr2[i];
         }
-        for (int i = Math.min(arr1.length,arr2.length); i < Math.max(arr1.length,arr2.length); i++) {
-            if(arr1.length > arr2.length) sum[i] = arr1[i];
+        for (int i = Math.min(arr1.length, arr2.length); i < Math.max(arr1.length, arr2.length); i++) {
+            if (arr1.length > arr2.length) sum[i] = arr1[i];
             else sum[i] = arr2[i];
         }
         return sum;
@@ -210,7 +199,45 @@ public class Homework10 {
     this case return smallest which is 8
      */
 
-    public static int findClosestTo10(int[] arr){
+    public static int findClosestTo10(int[] arr) {
 
+        Arrays.sort(arr);
+        int numberBefore10 = 0;// 5  11-5 = 6
+        int numberAfter10 = 0;// 15 10-15 = 4
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < 10) numberBefore10 = arr[i];
+            else break;
+        }
+        for (int i = arr.length - 1; i >= 0; i--) {
+            if (arr[i] > 10) numberAfter10 = arr[i];
+            else break;
+        }
+
+        if (arr[0] >= 10) return numberAfter10;
+        else if (arr[arr.length - 1] <= 10) return numberAfter10;
+        else {
+            if (Math.abs(10 - numberBefore10) <= Math.abs(10 - numberAfter10)) return numberBefore10;
+            else return numberAfter10;
+        }
+    }
+
+    public static void main(String[] args) {
+        String str = "   I   am      learning     Java      ";
+        ArrayList<Integer> arr = new ArrayList<>(Arrays.asList(-45, 0, 0, 34, 5, 67));
+        ArrayList<Integer> arr1 = new ArrayList<>(Arrays.asList(10, 20, 35, 60, 60, 60, 70));
+        ArrayList<String> arr2 = new ArrayList<>(Arrays.asList("java", "C#", "ruby", "JAVA", "ruby", "C#", "C++"));
+        int[] arr4 = {10, 3, 6, 3, 2};
+        int[] arr5 = {6, 8, 3, 0, 0, 7, 5, 10, 34};
+        int[] numbers = {-13, 8, 12, 15, -20};
+        System.out.println(countWords(str));
+        System.out.println(countA(str));
+        System.out.println(countPos(arr));
+        removeDuplicateNumbers(arr1);
+        removeDuplicateElements(arr2);
+        System.out.println(removeExtraSpaces(str));
+        System.out.println(Arrays.toString(add(arr4, arr5)));
+        System.out.println(findClosestTo10(numbers));
     }
 }
+
