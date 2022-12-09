@@ -195,12 +195,15 @@ public class Homework12 {
 
     public static String[] categorizeCharacters(String str){
 
-        String letters = "";
-        String digits = "";
-        String special = "";
+        String letters = " ";
+        String digits = " ";
+        String special = " ";
 
         for (int i = 0; i < str.length(); i++) {
-            if(Character.isLetter(str.charAt(i))) letters += str.charAt(i);
+            if(Character.isWhitespace(str.charAt(i))){
+                continue;
+            }
+            else if(Character.isLetter(str.charAt(i))) letters += str.charAt(i);
             else if(Character.isDigit(str.charAt(i))) digits += str.charAt(i);
             else special += str.charAt(i);
         }
@@ -215,6 +218,6 @@ public class Homework12 {
         System.out.println(middleInt(15,5,8));
         System.out.println(Arrays.toString(no13(new int[]{13, 13, 13})));
         System.out.println(Arrays.toString(arrFactorial(new int[]{})));
-        System.out.println(Arrays.toString(categorizeCharacters("isy567hb%$#")));
+        System.out.println(Arrays.toString(categorizeCharacters("      ")));
     }
 }
