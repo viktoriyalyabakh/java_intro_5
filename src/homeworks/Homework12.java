@@ -198,18 +198,13 @@ public class Homework12 {
         String letters = "";
         String digits = "";
         String special = "";
-        String[] categorize = new String[3];
 
         for (int i = 0; i < str.length(); i++) {
             if(Character.isLetter(str.charAt(i))) letters += str.charAt(i);
             else if(Character.isDigit(str.charAt(i))) digits += str.charAt(i);
             else special += str.charAt(i);
         }
-        categorize[0] = letters;
-        categorize[1] = digits;
-        categorize[2] = special;
-
-        return categorize;
+        return new String[] {letters, digits, special};
     }
     public static void main(String[] args) {
 
