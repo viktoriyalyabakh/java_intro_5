@@ -113,7 +113,7 @@ public class Homework13 {
      */
 
     public static String reverseSentence(String str) {
-        if (str.contains(" ")) {
+        if (str.trim().contains(" ")) {
             StringBuilder sb = new StringBuilder();
             String[] strArr = str.split(" ");
 
