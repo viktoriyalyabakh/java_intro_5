@@ -1,21 +1,24 @@
 package practice;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class MyPractice {
 
-    static int[] arr ={12, 14, 38, 34};
+    static int[] arr = {12, 14, 38, 34};
+
     public static void main(String[] args) {
 
-        System.out.println(SumOfArr(arr.length-1));
-        }
-        public static int SumOfArr(int n){
-
-        if(n == 0) return arr[n];
-        return arr[n] + SumOfArr(n-1);
-        }
-
+        System.out.println(range(arr));
     }
+
+    public static int range(int[] n) {
+        TreeSet<Integer> nums = new TreeSet<>();
+        for (Integer num : n) {
+            nums.add(num);
+        }
+        return nums.higher(nums.first());
+    }
+}
 
 
 

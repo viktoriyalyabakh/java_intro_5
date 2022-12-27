@@ -46,6 +46,11 @@ public class Homework09 {
             if(!isDublicate) System.out.println("There is no duplicates");
 
 
+            for (int element : numbers){
+
+            }
+
+
             System.out.println("\n--------Task 2---------\n");
 
             /*
